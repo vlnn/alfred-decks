@@ -39,4 +39,8 @@ GitHub Actions runs on every push to `main` and on pull requests:
 - `plutil -lint` on `info.plist`;
 - a build of `Decks.alfredworkflow`, kept as a downloadable artifact of the run.
 
-To publish a release, push a tag such as `v0.2.0`. The workflow's version is set from the tag and `Decks.alfredworkflow` is attached to a GitHub release with generated notes.
+Every push to `main` also republishes the build as the "Latest build" release, so the newest workflow is always at:
+
+https://github.com/vlnn/alfred-decks/releases/download/latest/Decks.alfredworkflow
+
+To publish a versioned release, push a tag such as `v0.2.0`. The workflow's version is set from the tag and `Decks.alfredworkflow` is attached to a GitHub release with generated notes.
