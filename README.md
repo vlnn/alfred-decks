@@ -30,3 +30,13 @@ A thin front end for the `decks` command. The workflow passes arguments and show
 ## Configuration
 
 Set in Alfred's workflow configuration: the decks directory (default `~/decks`) and the path to the `decks` executable (default `~/.local/bin/decks`).
+
+## CI and releases
+
+GitHub Actions runs on every push to `main` and on pull requests:
+
+- the tests on Linux and on macOS, where `/bin/bash` is the same old bash that Alfred uses;
+- `plutil -lint` on `info.plist`;
+- a build of `Decks.alfredworkflow`, kept as a downloadable artifact of the run.
+
+To publish a release, push a tag such as `v0.2.0`. The workflow's version is set from the tag and `Decks.alfredworkflow` is attached to a GitHub release with generated notes.
